@@ -1,16 +1,8 @@
-(define (determines-scale size-option)
-  "Determines scale from user selection. size-option is index for SF-OPTION."
-  (case size-option
-    ((0) 1)
-    ((1) 2)
-    ((2) 4)
-    ((3) 8)
-    ((4) 16)))
-
-
 (define (script-fu-resized-playback original-image size-option)
   "Main entry."
-  (let* ((scale (determines-scale size-option))
+  (let* (
+         ;; Determines scale from size-option(index). scale = 2 ^ index
+         (scale (expt 2 size-option))
 
          ;; Get width and height
          (width (car (gimp-image-width original-image)))
