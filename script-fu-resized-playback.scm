@@ -1,0 +1,61 @@
+(define (determines-scale size-option)
+  "Determines scale from user selection. size-option is index for SF-OPTION."
+  (case size-option
+    ((0) 1)
+    ((1) 2)
+    ((2) 4)
+    ((3) 8)
+    ((4) 16)))
+
+
+(define (script-fu-resized-playback original-image size-option)
+  "Main entry."
+  (let* ((scale (determines-scale size-option))
+
+         ;; Get width and height
+         (width (car (gimp-image-width original-image)))
+         (height (car (gimp-image-height original-image)))
+
+         ;; Scale width and height
+         (scaled-width (* width scale))
+         (scaled-height (* height scale))
+
+         ;; Duplicate image
+         (image (car (gimp-image-duplicate original-image)))
+
+         ;; Create empty layer for I don't know what (required by
+         ;; animation playback)
+         (layer (car (gimp-layer-new image
+                                     scaled-width scaled-height
+                                     RGB-IMAGE "Layer 1" 100 NORMAL-MODE))))
+
+    ;; Set interpolation to none to avoid blur
+    (gimp-context-set-interpolation INTERPOLATION-NONE)
+
+    ;; Scale image
+    (gimp-image-scale image scaled-width scaled-height)
+
+    ;; Update progress bar
+    (gimp-progress-update 1.0)
+
+    ;; Run animation playback
+    (plug-in-animationplay RUN-INTERACTIVE image layer)
+
+    ;; Delete scaled image since it is not used anymore
+    (gimp-image-delete image)))
+
+
+;; Registering script
+
+(script-fu-register
+ "script-fu-resized-playback"
+ "Resized Playback"
+ "Resize image before animation playback."
+ "Burhanuddin Baharuddin"
+ "Copyright 2019, Burhanuddin Baharuddin"
+ "March 2, 2019"
+ ""
+ SF-IMAGE "Image" 0
+ SF-OPTION "Size" '("1x" "2x" "4x" "8x" "16x"))
+
+(script-fu-menu-register "script-fu-resized-playback" "<Image>/Filters/Animation")
