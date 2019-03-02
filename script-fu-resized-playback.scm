@@ -34,7 +34,7 @@
     (plug-in-animationplay RUN-INTERACTIVE image layer)
 
     ;; Return scaled image for other scripts
-    image))
+    (list image)))
 
 
 ;; Registering script
