@@ -33,8 +33,8 @@
     ;; Run animation playback
     (plug-in-animationplay RUN-INTERACTIVE image layer)
 
-    ;; Delete scaled image since it is not used anymore
-    (gimp-image-delete image)))
+    ;; Return scaled image for other scripts
+    image))
 
 
 ;; Registering script
@@ -46,7 +46,7 @@
  "Burhanuddin Baharuddin"
  "Copyright 2019, Burhanuddin Baharuddin"
  "March 2, 2019"
- ""
+ "RGB*"
  SF-IMAGE "Image" 0
  SF-OPTION "Size" '("1x" "2x" "4x" "8x" "16x"))
 
