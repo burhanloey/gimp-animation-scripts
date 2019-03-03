@@ -113,7 +113,10 @@
        (vector->list frames)))
 
     ;; Open onion skinning image in new display
-    (gimp-display-new new-image)))
+    (gimp-display-new new-image)
+
+    ;; Return onion skinning image for other scripts
+    (list new-image)))
 
 
 ;; Registering script
