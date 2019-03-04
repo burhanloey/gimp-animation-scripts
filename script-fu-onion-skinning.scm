@@ -1,5 +1,9 @@
 (define (script-fu-onion-skinning image layer mode)
   (let* (
+         ;; Id to identify to which image the onion skins belong (used for
+         ;; merging script)
+         (id (car (gimp-procedural-db-temp-name)))
+
          ;; Allow user to select particular layer group by selecting its
          ;; children or itself
          (selected-layer-group (if (= TRUE (car (gimp-item-is-group layer)))
@@ -115,6 +119,10 @@
             (vector->list layers))))
 
        (vector->list frames)))
+
+    ;; Set id for image and onion skin image
+    (gimp-image-attach-parasite image (list "onion-skinning-id" 1 id))
+    (gimp-image-attach-parasite new-image (list "onion-skinning-parent-id" 1 id))
 
     ;; Open onion skinning image in new display
     (gimp-display-new new-image)
