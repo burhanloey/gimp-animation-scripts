@@ -10,7 +10,7 @@ the location at `Edit` > `Preferences` > `Folders` > `Scripts`.
 ## Layer structure for onion skinning
 
 The image needs to have a proper layer structure for onion skinning. Each
-frame should be a layer group consists of at least background layer. The
+frame should be a layer group consists of at least a background layer. The
 following image shows an example of a proper layer structure for onion skinning.
 
 ![Layer structure image for onion skinning][layer_structure.png]
