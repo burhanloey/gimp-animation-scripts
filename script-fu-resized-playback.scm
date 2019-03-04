@@ -1,23 +1,22 @@
-(define (script-fu-resized-playback original-image size-option)
+(define (script-fu-resized-playback image size)
   "Main entry."
   (let* (
-         ;; Determines scale from size-option(index). scale = 2 ^ index
-         (scale (expt 2 size-option))
+         ;; Determines scale from size(index). scale = 2 ^ index
+         (scale (expt 2 size))
 
          ;; Get width and height
-         (width (car (gimp-image-width original-image)))
-         (height (car (gimp-image-height original-image)))
+         (width (car (gimp-image-width image)))
+         (height (car (gimp-image-height image)))
 
          ;; Scale width and height
          (scaled-width (* width scale))
          (scaled-height (* height scale))
 
          ;; Duplicate image
-         (image (car (gimp-image-duplicate original-image)))
+         (new-image (car (gimp-image-duplicate image)))
 
-         ;; Create empty layer for I don't know what (required by
-         ;; animation playback)
-         (layer (car (gimp-layer-new image
+         ;; Create empty layer for animation playback
+         (layer (car (gimp-layer-new new-image
                                      scaled-width scaled-height
                                      RGB-IMAGE "Layer 1" 100 NORMAL-MODE))))
 
@@ -25,16 +24,16 @@
     (gimp-context-set-interpolation INTERPOLATION-NONE)
 
     ;; Scale image
-    (gimp-image-scale image scaled-width scaled-height)
+    (gimp-image-scale new-image scaled-width scaled-height)
 
     ;; Update progress bar
     (gimp-progress-update 1.0)
 
     ;; Run animation playback
-    (plug-in-animationplay RUN-INTERACTIVE image layer)
+    (plug-in-animationplay RUN-INTERACTIVE new-image layer)
 
     ;; Return scaled image for other scripts
-    (list image)))
+    (list new-image)))
 
 
 ;; Registering script
