@@ -1,6 +1,6 @@
 # gimp-animation-scripts
 
-A collection of GIMP scripts to help with animation mainly for pixel art
+A collection of GIMP scripts to help with animation mainly for pixel art.
 
 ## Installing
 
@@ -47,7 +47,7 @@ You can use this script to view onion skinning for each frame.
 
 ![Resized Playback with Onion Skinning image][resized_playback_w_onion_skinning.png]
 
-[layer_structure.png]: https://raw.githubusercontent.com/burhanloey/gimp-scripts/readme/screenshots/layer_structure.png
-[resized_playback.png]: https://raw.githubusercontent.com/burhanloey/gimp-scripts/readme/screenshots/resized_playback.png
-[onion_skinning.png]: https://raw.githubusercontent.com/burhanloey/gimp-scripts/readme/screenshots/onion_skinning.png
-[resized_playback_w_onion_skinning.png]: https://raw.githubusercontent.com/burhanloey/gimp-scripts/readme/screenshots/resized_playback_w_onion_skinning.png
+[layer_structure.png]: https://raw.githubusercontent.com/burhanloey/gimp-animation-scripts/master/screenshots/layer_structure.png
+[resized_playback.png]: https://raw.githubusercontent.com/burhanloey/gimp-animation-scripts/master/screenshots/resized_playback.png
+[onion_skinning.png]: https://raw.githubusercontent.com/burhanloey/gimp-animation-scripts/master/screenshots/onion_skinning.png
+[resized_playback_w_onion_skinning.png]: https://raw.githubusercontent.com/burhanloey/gimp-animation-scripts/master/screenshots/resized_playback_w_onion_skinning.png
