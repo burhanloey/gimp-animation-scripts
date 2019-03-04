@@ -19,6 +19,8 @@ following image shows an example of a proper layer structure for onion skinning.
 
 ### Resized Playback
 
+`Filters` > `Animation` > `Resized Playback`
+
 Most pixel art canvas for video games are small, like 16x16, 16x24, or 32x32.
 Animation playback that comes with default GIMP can't be resized. This script
 will scale the image for the animation playback (without touching your work).
@@ -26,6 +28,8 @@ will scale the image for the animation playback (without touching your work).
 ![Resized Playback image][resized_playback.png]
 
 ### Onion Skinning
+
+`Filters` > `Animation` > `Onion Skinning`
 
 This script will open a new image for the selected layer group for onion skinning.
 
@@ -42,6 +46,8 @@ Workflow:
 ![Onion Skinning image][onion_skinning.png]
 
 ### Resized Playback with Onion Skinning
+
+`Filters` > `Animation` > `Resized Playback with Onion Skinning`
 
 You can use this script to view onion skinning for each frame.
 
