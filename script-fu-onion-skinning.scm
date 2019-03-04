@@ -93,6 +93,10 @@
                 ;; Lowest layer in the frame
                 (background (vector-ref layers (- num-layers 1))))
 
+           ;; Select layer that the user should work on (first layer)
+           (if (equal? frame selected-frame)
+               (gimp-image-set-active-layer new-image (vector-ref layers 0)))
+
            ;; For each layer,
            (for-each
             (lambda (layer)
