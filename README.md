@@ -57,6 +57,10 @@ Workflow:
 `Filters` > `Animation` > `Merge Onion Skin`
 
 Merge your edited frame in onion skinning image back to original image.
+Make sure the original image is opened.
+
+If you want to close the original image after opening onion skinning, make sure you save
+the original image so the reference metadata will stick to it.
 
 
 
