@@ -78,13 +78,17 @@
 
               (gimp-item-set-visible background TRUE)
 
+              (gimp-image-undo-group-start parent-image)
+
               (gimp-image-remove-layer parent-image original-frame)
 
               (gimp-image-insert-layer
                parent-image
                new-frame
                0
-               original-position))))))
+               original-position)
+
+              (gimp-image-undo-group-end parent-image))))))
 
 
 ;; Registering script
