@@ -1,8 +1,28 @@
 (define (script-fu-onion-skinning image layer mode)
+
+  (define (current-seconds)
+    (let* ((now (time))
+           (year (list-ref now 0))
+           (month (list-ref now 1))
+           (day (list-ref now 2))
+           (hour (list-ref now 3))
+           (minute (list-ref now 4))
+           (second (list-ref now 5)))
+      (+ (* year 31557600)
+         (* month 2629800)
+         (* day 86400)
+         (* hour 3600)
+         (* minute 60)
+         second)))
+
+
+
   (let* (
          ;; Id to identify to which image the onion skins belong (used for
          ;; merging script)
-         (id (car (gimp-procedural-db-temp-name)))
+         (id (string-append (number->string (current-seconds))
+                            "-"
+                            (number->string (rand))))
 
          ;; Allow user to select particular layer group by selecting its
          ;; children or itself
