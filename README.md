@@ -4,7 +4,7 @@ A collection of GIMP scripts to help with animation mainly for pixel art.
 
 ## Installing
 
-Put `.scm` files that you want inside GIMP scripts folder. You can check
+Put `.scm` files that you want inside GIMP scripts folder. You can find
 the location at `Edit` > `Preferences` > `Folders` > `Scripts`.
 
 ## Layer structure for onion skinning
@@ -27,6 +27,14 @@ will scale the image for the animation playback (without touching your work).
 
 ![Resized Playback image][resized_playback.png]
 
+### Resized Playback with Onion Skinning
+
+`Filters` > `Animation` > `Resized Playback with Onion Skinning`
+
+You can use this script to view onion skinning for each frame.
+
+![Resized Playback with Onion Skinning image][resized_playback_w_onion_skinning.png]
+
 ### Onion Skinning
 
 `Filters` > `Animation` > `Onion Skinning`
@@ -38,20 +46,23 @@ Workflow:
 1. Select layer group (by selecting itself or its children).
 2. Run script.
 3. Select mode.
-4. A new image will opened. Your working layer group would be at the topmost.
-5. Do art on the topmost layer group.
-6. Manually merge back to the original image (by dragging the topmost layer group
-   into the original image, make it as parent layer, and then delete previous layer group).
+4. A new image will opened. The layer group that you want to edit would be at the topmost.
+5. Edit topmost layer group.
+6. Use `Merge Onion Skin` script to merge back to the original image.
    
 ![Onion Skinning image][onion_skinning.png]
 
-### Resized Playback with Onion Skinning
+### Merge Onion Skin
 
-`Filters` > `Animation` > `Resized Playback with Onion Skinning`
+`Filters` > `Animation` > `Merge Onion Skin`
 
-You can use this script to view onion skinning for each frame.
+Merge your edited frame in onion skinning image back to original image.
+Make sure the original image is opened.
 
-![Resized Playback with Onion Skinning image][resized_playback_w_onion_skinning.png]
+If you want to close the original image after opening onion skinning, make sure you save
+the original image so the reference metadata will stick to it.
+
+
 
 [layer_structure.png]: https://raw.githubusercontent.com/burhanloey/gimp-animation-scripts/master/screenshots/layer_structure.png
 [resized_playback.png]: https://raw.githubusercontent.com/burhanloey/gimp-animation-scripts/master/screenshots/resized_playback.png
