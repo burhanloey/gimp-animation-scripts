@@ -24,6 +24,8 @@ Credits to this video by [CryoNoir][CryoNoir] for the layer group idea: https://
 
 ### Restructure for Onion Skinning
 
+`Filters` > `Animation` > `Restructure for Onion Skinning`
+
 Restructure layers to match the structure required by Onion Skinning script. Refer above
 for details. The script will put each layer under new layer group along with chosen
 background color.
