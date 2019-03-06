@@ -62,6 +62,13 @@ Make sure the original image is opened.
 If you want to close the original image after opening onion skinning, make sure you save
 the original image so the reference metadata will stick to it.
 
+### Export Image Sequence
+
+`Filters` > `Animation` > `Export Image Sequence`
+
+Export all frames as image sequence. Visibility of each layer will affects
+the image. Only visiblity of background layer can be adjusted by the script.
+
 
 
 [layer_structure.png]: https://raw.githubusercontent.com/burhanloey/gimp-animation-scripts/master/screenshots/layer_structure.png
