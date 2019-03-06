@@ -15,7 +15,18 @@ following image shows an example of a proper layer structure for onion skinning.
 
 ![Layer structure image for onion skinning][layer_structure.png]
 
+You can use `Restructure for Onion Skinning` script to add background for each
+layer.
+
+Credits to this video by [CryoNoir][CryoNoir] for the layer group idea: https://www.youtube.com/watch?v=AY-r0T9wRbk
+
 ## Scripts
+
+### Restructure for Onion Skinning
+
+Restructure layers to match the structure required by Onion Skinning script. Refer above
+for details. The script will put each layer under new layer group along with chosen
+background color.
 
 ### Resized Playback
 
@@ -71,6 +82,7 @@ the image. Only visiblity of background layer can be adjusted by the script.
 
 
 
+[CryoNoir]: https://www.youtube.com/channel/UC7NCaA78KGBLPl2RLOBlAWg
 [layer_structure.png]: https://raw.githubusercontent.com/burhanloey/gimp-animation-scripts/master/screenshots/layer_structure.png
 [resized_playback.png]: https://raw.githubusercontent.com/burhanloey/gimp-animation-scripts/master/screenshots/resized_playback.png
 [onion_skinning.png]: https://raw.githubusercontent.com/burhanloey/gimp-animation-scripts/master/screenshots/onion_skinning.png
